@@ -1,0 +1,83 @@
+
+  .wrapper {
+    background: #f7f7f7;
+    padding: 10px 0px;
+    margin-bottom: 50px;
+    height: 750px;
+  
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
+  
+  .header {
+    grid-column: span 3;
+  }
+  
+  .arrow {
+    display: flex;
+    align-items: center;
+  }
+  .arrow img {
+    height: 25px;
+    background: #e6e6e6;
+    padding: 20px 5px;
+  }
+  .arrow.left-arrow {
+    justify-content: start;
+  }
+  .arrow.right-arrow {
+    justify-content: end;
+  }
+  
+  .image-gallery {
+    display: grid;
+    gap: 0.5rem;
+  
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    overflow-x: auto;
+  }
+  
+  .image-gallery .image-box {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    animation: cardEntrance 400ms ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  
+  .image-gallery .image-box:nth-child(13),
+  .image-gallery .image-box:nth-child(16),
+  .image-gallery .image-box:nth-child(19) {
+    grid-column: span 2;
+  }
+  .image-gallery .image-box:nth-child(7),
+  .image-gallery .image-box:nth-child(14),
+  .image-gallery .image-box:nth-child(18) {
+    grid-row: span 2;
+  }
+  
+  @keyframes cardEntrance {
+    from {
+      opacity: 0;
+      transform: scale(0.3);
+      filter: hue-rotate(180deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+      filter: hue-rotate(0deg);
+    }
+  }
+  
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
